@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
         title: 'Index Page'
       }
     )
-  // res.send(Bread)
 })
 
 router.get('/:arrayIndex', (req, res) => {
