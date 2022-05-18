@@ -12,10 +12,21 @@ router.get('/', (req, res) => {
   // res.send(Bread)
 })
 
-
 router.get('/:arrayIndex', (req, res) => {
     const { arrayIndex } = req.params
-    res.send(Bread[arrayIndex])
+    res.render('show', {
+      bread: Bread[arrayIndex]
+    })
+})
+
+breads.get('/:arrayIndex', (req, res) => {
+  if (Bread[req.params.arrayIndex]) {
+    res.render('Show', {
+      bread:Bread[req.params.arrayIndex]
+    })
+  } else {
+    res.send('404')
+  }
 })
 
 module.exports = router
